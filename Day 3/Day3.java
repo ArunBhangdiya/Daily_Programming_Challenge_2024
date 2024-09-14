@@ -21,6 +21,7 @@ public class Day3 {
         }
         int ans = duplicate(arr, n);
         System.out.println(ans);
+        sc.close();
         
     }
     public static int duplicate(int[] arr, int n){

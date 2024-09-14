@@ -33,6 +33,7 @@ public class Day4 {
         sortedArrays(arr1, arr2);
         print(arr1);
         print(arr2);
+        sc.close();
     }
     public static void sortedArrays(int[] arr1, int[] arr2){
         int m = arr1.length, n = arr2.length;

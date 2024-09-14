@@ -27,6 +27,7 @@ public class Day5 {
         List<Integer> ans = new ArrayList<>();
         ans = findLeader(arr, n);
         printArray(ans);
+        sc.close();
     }
     public static List<Integer> findLeader(int[] arr, int n){
         List<Integer> arr2 = new ArrayList<>();

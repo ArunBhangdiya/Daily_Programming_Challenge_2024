@@ -23,6 +23,7 @@ class Day1{
         }
         sort(arr);
         print(arr);
+        sc.close();
     }
     public static void sort(int[]arr){
         int cZ = 0, cO = 0;

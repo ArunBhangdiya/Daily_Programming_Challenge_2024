@@ -23,6 +23,7 @@ public class Day2 {
         }
         int num = missingNumber(arr,n+1);
         System.out.println(num);
+        sc.close();
         
     }
     public static int missingNumber(int[] arr,int n){
