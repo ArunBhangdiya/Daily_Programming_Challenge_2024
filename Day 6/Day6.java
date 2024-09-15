@@ -26,7 +26,7 @@ public class Day6 {
         }
         List<int[]> zeroSumSubarrays = zeroSumSubarrays(arr,n);
         print(zeroSumSubarrays,n);
-        sc.close();;
+        sc.close();
 
     }
     public static List<int[]> zeroSumSubarrays(int[] arr,int n) {
