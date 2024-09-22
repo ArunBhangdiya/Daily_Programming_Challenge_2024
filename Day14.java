@@ -1,4 +1,5 @@
 import java.util.*;
+/*import java.util.*;
 /*
 Count Substrings with Exactly K Distinct Characters
 
@@ -16,40 +17,39 @@ Examples:
 Example 1
 Input: s = "pqpqs", k = 2
 Output: 7
-Explanation: The possible substrings with exactly 2 distinct characters are: "pq", "pqp", "qp", "pqs", "pq", "qs", and "pq". Thus, there are 7 such substrings.
- */
+Explanation: The possible substrings with exactly 2 distinct characters are: "pq", "pq", "qp", "pqp", "qpq", "pqpq","qs". Thus, there are 7 such substrings.
+  */
 public class Day14 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s1 = sc.next();
         int k = sc.nextInt();
-        System.out.println(countOfUniqueSubstrings(s1, k));
+        List<String> result = countSubstringsWithKDistinctCharacters(s1, k);
+        for (String substring : result) {
+            System.out.println(substring);
+        }
+        System.out.println(result.size());
         sc.close();
     }
-    public static int countOfUniqueSubstrings(String s, int k) {
-        int n = s.length();
-        int count = 0;
-        HashMap<Character, Integer> charCount = new HashMap<>();
 
-        for (int i = 0; i < n; i++) {
-            charCount.clear();
-            int distinctChars = 0;
-            for (int j = i; j < n; j++) {
-                char c = s.charAt(j);
-                charCount.put(c, charCount.getOrDefault(c, 0) + 1);
-                if (charCount.get(c) == 1) {
-                    distinctChars++;
-                }
-                if (distinctChars == k) {
-                    count++;
-                } else if (distinctChars > k) {
+    public static List<String> countSubstringsWithKDistinctCharacters(String s, int k) {
+        int n = s.length();
+        List<String> substrings = new ArrayList<>();
+        for (int start = 0; start < n; start++) {
+            Set<Character> distinctChars = new HashSet<>();
+            for (int end = start; end < n; end++) {
+                distinctChars.add(s.charAt(end));
+                
+                if (distinctChars.size() > k) {
                     break;
+                }
+                
+                if (distinctChars.size() == k) {
+                    substrings.add(s.substring(start, end + 1));
                 }
             }
         }
 
-        return count;
+        return substrings;
     }
-
 }
