@@ -1,10 +1,8 @@
 import java.util.*;
-
 /*
 Sliding Window Maximum
 
 You are given an array of integers arr and a positive integer k. Your task is to find the maximum element in each sliding window of size k. The window slides from left to right, one element at a time, and you need to return the maximum element for each of these windows.
-
 
 Input:
 An integer array arr of size n, where 1≤n≤105
@@ -24,7 +22,6 @@ The third window is [-1, -3, 5] → Maximum = 5
 The fourth window is [-3, 5, 3] → Maximum = 5
 The fifth window is [5, 3, 6] → Maximum = 6
 The sixth window is [3, 6, 7] → Maximum = 7
-
  */
 public class Day23 {
     public static void main(String[] args) {
